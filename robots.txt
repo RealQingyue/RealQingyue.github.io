@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /GS-ProCams/
+
+Sitemap: https://realqingyue.github.io/sitemap.xml
