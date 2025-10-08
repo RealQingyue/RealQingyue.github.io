@@ -1,76 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>GS-ProCams - Coming Soon</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <!-- Favicon -->
-  <link rel="icon" href="./src/favicon.png" />
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="GS-ProCams: Gaussian Splatting-Based Projector-Camera Systems - Deng et al.">
+  <meta name="description" content="We present GS-ProCams, the first Gaussian splatting-based projector-camera systems.">
+  <meta name="keywords" content="Projection Mapping, Projector-Camera Systems, Gaussian Splatting">
+  <meta name="author" content="Qingyue Deng, Jijiang Li, Haibin Ling, Bingyao Huang">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+  
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
-  <style>
-    body {
-      background-color: #f4f4f4;
-      display: flex;
-      min-height: 100vh;
-      flex-direction: column;
-      font-family: 'Segoe Script', 'Noto Sans', sans-serif;
+  <!-- Academic/Research Specific -->
+  <meta name="citation_title" content="GS-ProCams: Gaussian Splatting-Based Projector-Camera Systems">
+  <meta name="citation_author" content="Deng, Qingyue">
+  <meta name="citation_author" content="Li, Jijiang">
+  <meta name="citation_author" content="Ling, Haibin">
+  <meta name="citation_author" content="Huang, Bingyao">
+  <meta name="citation_publication_date" content="2025">
+  <meta name="citation_journal_title" content="IEEE Transactions on Visualization and Computer Graphics">
+  <meta name="citation_doi" content="10.1109/TVCG.2025.3616841">
+  
+  <!-- Additional SEO -->
+  <meta name="theme-color" content="#2563eb">
+  <meta name="msapplication-TileColor" content="#2563eb">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://ajax.googleapis.com">
+  <link rel="preconnect" href="https://documentcloud.adobe.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+
+  <!-- Page title -->
+  <title>GS-ProCams: Gaussian Splatting-Based Projector-Camera Systems - Qingyue Deng et al. | Academic Research</title>
+  
+  <!-- Favicon and App Icons -->
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link rel="apple-touch-icon" href="static/images/favicon.ico">
+  
+  <!-- Critical CSS - Load synchronously -->
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  
+  <!-- Non-critical CSS - Load asynchronously -->
+  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  
+  <!-- Fallback for browsers that don't support preload -->
+  <noscript>
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+  
+  <!-- Fonts - Optimized loading -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Defer non-critical JavaScript -->
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/bulma-carousel.min.js"></script>
+  <script defer src="static/js/bulma-slider.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+  
+  <!-- Structured Data for Academic Papers -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "GS-ProCams: Gaussian Splatting-Based Projector-Camera Systems",
+    "description": "We present GS-ProCams, the first Gaussian splatting-based projector-camera systems.",
+    "author": [
+      { "@type": "Person", "name": "Qingyue Deng" },
+      { "@type": "Person", "name": "Jijiang Li" },
+      { "@type": "Person", "name": "Haibin Ling" },
+      { "@type": "Person", "name": "Bingyao Huang" }
+    ],
+    "datePublished": "2025-10-03",
+    "publisher": { "@type": "Organization", "name": "IEEE Transactions on Visualization and Computer Graphics" },
+    "url": "https://realqingyue.github.io/GS-ProCams/",
+    "image": "https://realqingyue.github.io/static/images/procams.png",
+    "keywords": ["Projection Mapping", "Projector-Camera Systems", "Gaussian Splatting"],
+    "abstract": "GS-ProCams presents a projector-camera system built on Gaussian splatting for high-quality, real-time projected imagery reconstruction and capture.",
+    "citation": "@ARTICLE{Deng2025GS-ProCams, author={Deng, Qingyue and Li, Jijiang and Ling, Haibin and Huang, Bingyao}, journal={IEEE Transactions on Visualization and Computer Graphics}, title={GS-ProCams: Gaussian Splatting-Based Projector-Camera Systems}, year={2025}, doi={10.1109/TVCG.2025.3616841}}",
+    "isAccessibleForFree": true,
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "mainEntity": {
+      "@type": "WebPage",
+      "@id": "https://realqingyue.github.io/GS-ProCams/"
     }
-    .content-container {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 2rem;
-    }
-    .project-title {
-      font-weight: 700;
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      color: #363636;
-    }
-    .coming-soon {
-      font-size: 2.5rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-      color: #00d1b2; 
-    }
-    .description {
-      max-width: 700px;
-      font-size: 1.25rem;
-      color: #4a4a4a;
-      line-height: 1.6;
-      margin-bottom: 2rem;
-    }
-    .contact-info {
-      font-size: 1rem;
-      color: #666;
-      margin-top: 2rem;
-    }
-    .contact-info a {
-      color: #00d1b2;
-      text-decoration: none;
-    }
-    .contact-info a:hover {
-      text-decoration: underline;
-    }
-  </style>
+  }
+  </script>
+  
+
 </head>
 <body>
-  <section class="content-container">
-    <h1 class="project-title">GS-ProCams: Gaussian Splatting-Based Projector-Camera Systems</h1>
-    <div class="coming-soon" aria-label="Status">🚧 Coming Soon</div>
-    <p class="description">
-      We are currently preparing the necessary materials and will release the source code, supplementary materials, datasets, and other related resources in the near future.
-    </p>
-    <div class="contact-info">
-      For inquiries, please contact: <a href="mailto:qingyue.deng@email.swu.edu.cn">qingyue.deng@email.swu.edu.cn</a>
+
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+
+  <main id="main-content">
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">GS-ProCams: Gaussian Splatting-Based Projector-Camera Systems</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://realqingyue.github.io/" target="_blank">Qingyue Deng</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://jijiangli.github.io/" target="_blank">Jijiang Li</a><sup>2</sup>,</span>
+              <span class="author-block">
+                <a href="https://haibinling.github.io/" target="_blank">Haibin Ling</a><sup>2</sup>,</span>
+              <span class="author-block">
+                <a href="https://bingyaohuang.github.io/" target="_blank">Bingyao Huang</a><sup>1*</sup>,</span>
+                    </span>
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block">
+                      <sup>1</sup>Southwest University
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <sup>2</sup>Westlake University<br>
+                      IEEE ISMAR 2025 / IEEE TVCG
+                    </span>
+                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates the corresponding author</small></span>
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                      <span class="link-block">
+                        <a href="https://doi.org/10.1109/TVCG.2025.3616841" target="_blank"
+                          class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+
+                    <span class="link-block">
+                      <a href="../coming-soon/"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Supplementary</span>
+                    </a>
+                  </span>
+
+                  <span class="link-block">
+                    <a href="https://github.com/realqingyue/GS-ProCams" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <span class="link-block">
+                  <a href="../coming-soon/"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv (TBD)</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
 
-</body>
-</html>
+<!-- Teaser video-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
+        <source src="static/videos/teaser-video.mp4" type="video/mp4">
+        <track kind="captions" src="static/videos/teaser-video.vtt" srclang="en" label="English">
+      </video>
+    </div>
+  </div>
+</section>
+<!-- End teaser video -->
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We present GS-ProCams, the first Gaussian Splatting-based framework for projector-camera systems (ProCams). GSProCams is not only view-agnostic but also significantly enhances the efficiency of projection mapping (PM) that requires establishing geometric and radiometric mappings between the projector and the camera. Previous CNN-based ProCams are constrained to a specific viewpoint, limiting their applicability to novel perspectives. In contrast, NeRF-based ProCams support view-agnostic projection mapping, however, they require an additional co-located light source and demand significant computational and memory resources. To address this issue, we propose GS-ProCams that employs 2D Gaussian for scene representations, and enables efficient view-agnostic ProCams applications. In particular, we explicitly model the complex geometric and photometric mappings of ProCams using projector responses, the projection surface's geometry and materials represented by Gaussians, and the global illumination component. Then, we employ differentiable physically-based rendering to jointly estimate them from captured multi-view projections. Compared to state-of-the-art NeRF-based methods, our GS-ProCams eliminates the need for additional devices, achieving superior ProCams simulation quality. It also uses only 1/10 of the GPU memory for training and is 900 times faster in inference speed. 
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <div class="bibtex-header">
+        <h2 class="title">BibTeX</h2>
+        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+          <i class="fas fa-copy"></i>
+          <span class="copy-text">Copy</span>
+        </button>
+      </div>
+    <pre id="bibtex-code"><code>@ARTICLE{Deng2025GS-ProCams,
+  author={Deng, Qingyue and Li, Jijiang and Ling, Haibin and Huang, Bingyao},
+  journal={IEEE Transactions on Visualization and Computer Graphics}, 
+  title={GS-ProCams: Gaussian Splatting-Based Projector-Camera Systems}, 
+  year={2025},
+  doi={10.1109/TVCG.2025.3616841}
+}</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>

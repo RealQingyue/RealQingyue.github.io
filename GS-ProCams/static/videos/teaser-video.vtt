@@ -1,0 +1,310 @@
+WEBVTT
+
+1
+00:00:01.875 --> 00:00:03.500
+We present GS-ProCams,
+
+2
+00:00:03.500 --> 00:00:05.875
+the first Gaussian splatting-based framework
+
+3
+00:00:05.875 --> 00:00:08.041
+for projector-camera systems (ProCams).
+
+4
+00:00:08.916 --> 00:00:11.750
+GS-ProCams significantly enhances the efficiency
+
+5
+00:00:11.750 --> 00:00:14.458
+of projection mapping which requires establishing
+
+6
+00:00:14.458 --> 00:00:16.666
+geometric and photometric mappings
+
+7
+00:00:16.666 --> 00:00:19.041
+between the projector and the camera.
+
+8
+00:00:24.500 --> 00:00:27.666
+Projector-camera systems (ProCams) are integrated systems
+
+9
+00:00:27.666 --> 00:00:30.375
+ that combine a projector and a camera.
+
+10
+00:00:30.750 --> 00:00:33.166
+Geometric and photometric mappings between  
+
+11
+00:00:33.166 --> 00:00:35.291
+the projector and the camera are foundational
+
+12
+00:00:35.291 --> 00:00:37.666
+to ProCams and serve as cornerstones
+
+13
+00:00:37.666 --> 00:00:39.541
+ for numerous applications.
+
+14
+00:00:39.916 --> 00:00:42.625
+However, most existing methods are designed
+
+15
+00:00:42.625 --> 00:00:44.708
+for a specific camera viewpoint.
+
+16
+00:00:45.333 --> 00:00:47.750
+If these viewpoint specific methods are applied
+
+17
+00:00:47.750 --> 00:00:50.375
+at a novel camera viewpoint, it will be necessary
+
+18
+00:00:50.375 --> 00:00:52.750
+to acquire data and train the model again
+
+19
+00:00:52.750 --> 00:00:54.958
+ to establish the new mapping relationships.
+
+20
+00:00:56.083 --> 00:00:57.166
+The state-of-the-art approach
+
+21
+00:00:57.166 --> 00:00:59.666
+ for view-agnostic projection mapping employs
+
+22
+00:00:59.666 --> 00:01:02.583
+ multi-layer perceptrons (MLPs) to represent scenes.
+
+23
+00:01:03.291 --> 00:01:06.333
+However, this method presents significant challenges
+
+24
+00:01:06.333 --> 00:01:08.708
+ in terms of computational resources,
+
+25
+00:01:08.708 --> 00:01:11.041
+as evidenced by its slow training speed,
+
+26
+00:01:11.416 --> 00:01:12.833
+ limited inference efficiency,
+
+27
+00:01:13.333 --> 00:01:14.583
+and high memory demands.
+
+28
+00:01:15.416 --> 00:01:18.125
+To address this issue, we propose GS-ProCams,
+
+29
+00:01:18.125 --> 00:01:21.375
+ that employs 2D Gaussian for scene representations.
+
+30
+00:01:22.500 --> 00:01:25.041
+Since standard 2D Gaussian Splatting cannot capture
+
+31
+00:01:25.041 --> 00:01:27.625
+ the interaction between the projector's illumination
+
+32
+00:01:27.625 --> 00:01:28.583
+ and the surface,
+
+33
+00:01:28.583 --> 00:01:30.750
+we enhance 2D Gaussian Splatting
+
+34
+00:01:30.750 --> 00:01:33.083
+using BRDF parameterization.
+
+35
+00:01:33.083 --> 00:01:36.375
+We obtain the geometry and material of the target surface,
+
+36
+00:01:36.375 --> 00:01:38.208
+through differentiable splatting.
+
+37
+00:01:38.666 --> 00:01:41.666
+Then, we simulate real-world projector-camera systems,
+
+38
+00:01:41.666 --> 00:01:43.625
+using physically-based rendering.
+
+39
+00:01:44.333 --> 00:01:46.958
+GS-ProCams thus efficiently establishes
+
+40
+00:01:46.958 --> 00:01:49.083
+ the geometric and photometric mappings 
+
+41
+00:01:49.083 --> 00:01:51.041
+between the projector and the camera.
+
+42
+00:01:51.875 --> 00:01:53.166
+After training on a scene,
+
+43
+00:01:53.166 --> 00:01:55.541
+GS-ProCams can be directly applied
+
+44
+00:01:55.541 --> 00:01:57.458
+at novel camera viewpoints.
+
+45
+00:02:00.583 --> 00:02:02.583
+To train GS-ProCams for a scene,
+
+46
+00:02:02.583 --> 00:02:05.333
+we project various patterns onto the target surface
+
+47
+00:02:05.333 --> 00:02:09.083
+and capture images from multiple viewpoints using a camera.
+
+48
+00:02:09.541 --> 00:02:12.000
+This includes a fixed pattern for each viewpoint,
+
+49
+00:02:12.000 --> 00:02:14.416
+such as a digital speckle pattern to determine
+
+50
+00:02:14.416 --> 00:02:17.125
+the positions of the projector and camera viewpoints,
+
+51
+00:02:17.125 --> 00:02:23.166
+and a few nature images for model training.
+
+52
+00:02:31.125 --> 00:02:32.458
+After training on a scene,
+
+53
+00:02:32.458 --> 00:02:35.083
+GS-ProCams can simulate the target surface
+
+54
+00:02:35.083 --> 00:02:36.333
+ with a novel projection
+
+55
+00:02:36.333 --> 00:02:38.208
+at a viewpoint that GS-ProCams
+
+56
+00:02:38.208 --> 00:02:40.083
+has not seen previously.
+
+57
+00:02:42.791 --> 00:02:44.541
+This enables various applications
+
+58
+00:02:44.541 --> 00:02:46.291
+of projector-camera systems.
+
+59
+00:02:47.500 --> 00:02:51.083
+For example, because GS-ProCams is fully differentiable,
+
+60
+00:02:51.083 --> 00:02:52.666
+ it allows GS-ProCams
+
+61
+00:02:52.666 --> 00:02:54.416
+to treat projector compensation
+
+62
+00:02:54.416 --> 00:02:56.916
+as an inverse rendering problem.
+
+63
+00:02:57.458 --> 00:03:00.166
+By aligning the simulated result of GS-ProCams
+
+64
+00:03:00.166 --> 00:03:01.791
+with a desired image,
+
+65
+00:03:01.791 --> 00:03:03.625
+we can achieve projector compensation
+
+66
+00:03:03.625 --> 00:03:06.250
+for this viewpoint in the real world.
+
+67
+00:03:09.333 --> 00:03:12.291
+Due to its efficiency, our framework can be combined
+
+68
+00:03:12.291 --> 00:03:15.000
+with popular large generative models to achieve innovative
+
+69
+00:03:15.000 --> 00:03:18.166
+spatial augmented reality applications.
+
+70
+00:03:19.291 --> 00:03:21.166
+For instance, it can be integrated with
+
+71
+00:03:21.333 --> 00:03:23.750
+an inpainting model to eliminate objects
+
+72
+00:03:23.750 --> 00:03:25.291
+in the real world.
+
+73
+00:03:32.625 --> 00:03:35.333
+Similarly, we can combine with diffusion models
+
+74
+00:03:35.333 --> 00:03:37.333
+to change the appearance of reality
+
+75
+00:03:37.333 --> 00:03:39.375
+through text prompts.
+
+76
+00:03:49.250 --> 00:03:50.958
+Thanks for watching.
+
+77
+00:03:51.958 --> 00:03:55.458
+(See the principal manuscript for details)
+
